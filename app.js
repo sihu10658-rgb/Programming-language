@@ -1,27 +1,34 @@
-// 웹 페이지 클릭 및 네트워크 통신 전용 모듈
 document.addEventListener("DOMContentLoaded", () => {
     const codeInput = document.getElementById("code-input");
     const outputBox = document.getElementById("output-box");
     const btnRun = document.getElementById("btn-run");
     const btnDownload = document.getElementById("btn-download");
 
-    // 실행하기 버튼 클릭
+    // 실행 및 최적화 버튼
     btnRun.addEventListener("click", () => {
         const rawCode = codeInput.value;
         if (!rawCode.trim()) {
-            outputBox.innerText = "⚠️ 코드를 입력해주세요!";
+            outputBox.innerText = "⚠️ 코드를 입력해 주세요!";
             return;
         }
 
-        // 1. latex_math.js의 파서 호출
-        const compiledCode = AOTLaScriptParser.parse(rawCode);
+        // AOTLaScript 파서 및 최적화기 구동
+        const result = AOTLaScriptOptimizer.compile(rawCode);
 
-        // 2. 결과 출력 (실제 운영 시 컴파일 백엔드로 전송)
-        outputBox.innerText = `[AOT 컴파일 최적화 완료]\n변환된 코드:\n${compiledCode}`;
+        // 결과 출력
+        outputBox.innerText = 
+`[1. 원본 소스 코드]
+${result.raw}
+
+[2. LaTeX 구문 분석 (Parsing)]
+${result.parsed}
+
+[3. AOT 최적화 (유한소수 판정 및 상수 접기 완료)]
+${result.optimized}`;
     });
 
-    // 다운로드 버튼 클릭
+    // 다운로드 버튼
     btnDownload.addEventListener("click", () => {
-        alert("최적화된 AOT 실행 파일(.exe/.bin) 다운로드를 요청합니다.");
+        alert("AOT 컴파일된 C/LLVM 기계어 바이너리 파일(.exe / .bin) 다운로드를 요청합니다.");
     });
 });
