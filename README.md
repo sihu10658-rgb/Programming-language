@@ -1,5 +1,5 @@
 # Programming-language
-# 🚀 MyLang (언어 이름)
+# 🚀 MyLang (AOTLaScript)
 
 > **LaTeX 수식을 지원하며, 저장 즉시 AOT 컴파일되어 C/LLVM 급 속도를 내는 초고속 프로그래밍 언어**
 
