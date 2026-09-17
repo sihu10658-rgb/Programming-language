@@ -3,28 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AOTLaScript Playground</title>
+    <title>AOTLaScript - Official Download & Playground</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>🚀 AOTLaScript Playground</h1>
-        
-        <!-- 코드 입력창 -->
-        <textarea id="code-input" placeholder="코드를 입력하세요...&#10;let x = Math.\sqrt{16} + 10;&#10;let y = Math.\frac{100}{40};&#10;let z = Math.\frac{10}{3};"></textarea>
-        
-        <!-- 컨트롤 버튼 -->
-        <div class="btn-group">
-            <button id="btn-run" class="btn primary">실행 및 AOT 최적화</button>
-            <button id="btn-download" class="btn success">C/AOT 실행 파일 다운로드</button>
-        </div>
+        <!-- 메인 헤더 & 다운로드 섹션 -->
+        <header class="hero-section">
+            <span class="badge">AOT-Compiled Language v1.0.0</span>
+            <h1>AOTLaScript</h1>
+            <p class="tagline">LaTeX 수식 구문 지원 & $2^x \times 5^y$ 유한소수 컴파일 타임 최적화 엔진</p>
+            
+            <div class="download-box">
+                <!-- 실제 다운로드 버튼 -->
+                <button id="btn-download" class="btn-primary">
+                    📥 AOTLaScript v1.0.0 다운로드 (.exe)
+                </button>
+                <a href="https://github.com/sihu10658-rgb/Programming-language" target="_blank" class="btn-secondary">
+                    📂 GitHub 소스코드 (C/LLVM)
+                </a>
+            </div>
+            <p class="sys-info">지원 OS: Windows 10/11 (64-bit) | C99 규격 컴파일러 포함</p>
+        </header>
 
-        <!-- 실행 결과 출력 -->
-        <h3>AOT 컴파일 최적화 결과:</h3>
-        <pre id="output-box">버튼을 누르면 컴파일 결과가 여기에 표시됩니다.</pre>
+        <hr>
+
+        <!-- 언어 핵심 사양 -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <h3>⚡ AOT 최적화</h3>
+                <p>C/LLVM 수준의 초고속 실행 속도 및 $2^x \times 5^y$ 소인수분해 기반 상수의 연산 비용 0 처리</p>
+            </div>
+            <div class="feature-card">
+                <h3>📐 LaTeX 수식 파싱</h3>
+                <p><code>Math.\sqrt{x}</code>, <code>Math.\frac{a}{b}</code> 스타일의 직관적인 수학 문법 제공</p>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- 웹 시연용 플레이그라운드 -->
+        <section class="playground-section">
+            <h2>🌐 웹에서 즉시 테스트하기</h2>
+            <textarea id="code-input" placeholder="Math.\sqrt{16} + Math.\frac{1}{4} 코드를 입력하세요..."></textarea>
+            <button id="btn-compile">AOT 컴파일 실행</button>
+            <pre id="output-console"></pre>
+        </section>
     </div>
 
-    <!-- 모듈 스크립트 불러오기 -->
     <script src="latex_math.js"></script>
     <script src="app.js"></script>
 </body>
