@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AOTLaScript Playground</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,20 +11,20 @@
         <h1>🚀 AOTLaScript Playground</h1>
         
         <!-- 코드 입력창 -->
-        <textarea id="code-input" placeholder="코드를 입력하세요...&#10;let x = Math.\sqrt{16};"></textarea>
+        <textarea id="code-input" placeholder="코드를 입력하세요...&#10;let x = Math.\sqrt{16} + 10;&#10;let y = Math.\frac{100}{40};&#10;let z = Math.\frac{10}{3};"></textarea>
         
         <!-- 컨트롤 버튼 -->
         <div class="btn-group">
-            <button id="btn-run" class="btn primary">실행하기</button>
+            <button id="btn-run" class="btn primary">실행 및 AOT 최적화</button>
             <button id="btn-download" class="btn success">C/AOT 실행 파일 다운로드</button>
         </div>
 
         <!-- 실행 결과 출력 -->
-        <h3>실행 / 최적화 결과:</h3>
-        <pre id="output-box">결과가 여기에 표시됩니다.</pre>
+        <h3>AOT 컴파일 최적화 결과:</h3>
+        <pre id="output-box">버튼을 누르면 컴파일 결과가 여기에 표시됩니다.</pre>
     </div>
 
-    <!-- 기능별 JS 모듈 분리 불러오기 -->
+    <!-- 모듈 스크립트 불러오기 -->
     <script src="latex_math.js"></script>
     <script src="app.js"></script>
 </body>
